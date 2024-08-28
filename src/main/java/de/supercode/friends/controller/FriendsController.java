@@ -30,7 +30,7 @@ public class FriendsController {
         return ResponseEntity.status(HttpStatus.FOUND).body(friendsService.getAllFriends());
     }
     @PutMapping
-    public ResponseEntity<Friend> updateFriend(Friend Friend){
-        return ResponseEntity.status(HttpStatus.CREATED).body(friendsService)
+    public ResponseEntity<Friend> updateFriend(long id, Friend friend){
+        return ResponseEntity.status(HttpStatus.CREATED).body(friendsService.updateFriend(id,friend));
     }
 }

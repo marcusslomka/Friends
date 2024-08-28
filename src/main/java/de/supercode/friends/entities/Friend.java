@@ -98,6 +98,9 @@ public class Friend {
     public void setGoodAtVolleyball(boolean goodAtVolleyball) {
         this.goodAtVolleyball = goodAtVolleyball;
     }
+    public boolean getGoodAtVolleyball(){
+        return this.goodAtVolleyball;
+    }
 
     @Override
     public String toString() {
