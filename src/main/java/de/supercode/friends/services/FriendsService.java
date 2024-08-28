@@ -24,4 +24,7 @@ public class FriendsService {
     public Friend getFriend(long id){
         return friendsRepo.findById(id).orElse(null);
     }
+    public void updateFriend (long id, Friend friend){
+        Friend toUpdateFriend = friendsRepo.findById(friend -> )
+        }
 }
