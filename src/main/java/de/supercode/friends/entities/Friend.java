@@ -6,12 +6,12 @@ import jakarta.persistence.Id;
 
 import java.util.Date;
 
-public class Friends {
+public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    public Friends(long id, String firstName, String lastName, Date geburtstag) {
+    public Friend(long id, String firstName, String lastName, Date geburtstag) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
