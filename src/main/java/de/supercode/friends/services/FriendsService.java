@@ -1,5 +1,6 @@
 package de.supercode.friends.services;
 
+import com.fasterxml.jackson.databind.introspect.DefaultAccessorNamingStrategy;
 import de.supercode.friends.entities.Friend;
 import de.supercode.friends.repository.FriendsRepo;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,9 @@ public class FriendsService {
 
         public void deleteFriend(long id){
             friendsRepo.deleteById(id);
+        }
+
+        public List<Friend> friendWithVerdienstGreaterThan(long verdienst){
+            return friendsRepo.findByVerdienstGreaterThan(verdienst);
         }
 }

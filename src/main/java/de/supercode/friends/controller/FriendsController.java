@@ -36,6 +36,10 @@ public class FriendsController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFriend(@PathVariable long id){
         friendsService.deleteFriend(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); // wirft den Status 204 - No Content
+    }
+    @GetMapping("/verdienstGreaterThan")
+    public ResponseEntity<List<Friend>> getFriendsByVerdienstGreaterThan(@RequestParam long verdienst){
+        return ResponseEntity.ok(friendsService.friendWithVerdienstGreaterThan(verdienst));
     }
 }

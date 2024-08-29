@@ -19,7 +19,7 @@ public class Friend {
     private String handynummer;
     private String email;
     private String beruf;
-    private String verdienst;
+    private long verdienst;
     private boolean goodAtVolleyball;
 
     public long getId() {
@@ -78,11 +78,11 @@ public class Friend {
         this.beruf = beruf;
     }
 
-    public String getVerdienst() {
+    public long getVerdienst() {
         return verdienst;
     }
 
-    public void setVerdienst(String verdienst) {
+    public void setVerdienst(long verdienst) {
         this.verdienst = verdienst;
     }
 
