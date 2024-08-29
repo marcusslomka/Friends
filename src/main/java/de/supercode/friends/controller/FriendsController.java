@@ -26,8 +26,8 @@ public class FriendsController {
         return ResponseEntity.status(HttpStatus.FOUND).body(friendsService.getFriend(id));
     }
     @GetMapping
-    public ResponseEntity<List<Friend>> getAllFriends(){
-        return ResponseEntity.status(HttpStatus.FOUND).body(friendsService.getAllFriends());
+    public List<Friend> getAllFriends(){
+        return friendsService.getAllFriends();
     }
     @PutMapping
     public ResponseEntity<Friend> updateFriend(long id, Friend friend){

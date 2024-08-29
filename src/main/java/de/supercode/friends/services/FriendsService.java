@@ -18,6 +18,7 @@ public class FriendsService {
     public Friend createFriend(Friend friend){
         return this.friendsRepo.save((friend));
     }
+
     public List<Friend> getAllFriends(){
         return friendsRepo.findAll();
     }

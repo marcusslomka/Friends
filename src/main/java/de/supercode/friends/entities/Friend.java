@@ -1,21 +1,22 @@
 package de.supercode.friends.entities;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Date;
 
+@Entity
 public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    public Friend(long id, String firstName, String lastName, Date geburtstag) {
+    public Friend(long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.geburtstag = geburtstag;
     }
 
     private String firstName;
