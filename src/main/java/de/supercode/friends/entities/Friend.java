@@ -21,6 +21,7 @@ public class Friend {
     private String beruf;
     private long verdienst;
     private boolean goodAtVolleyball;
+    private FriendsGroup group;
 
     public long getId() {
         return id;
@@ -95,6 +96,14 @@ public class Friend {
     }
     public boolean getGoodAtVolleyball(){
         return this.goodAtVolleyball;
+    }
+
+    public FriendsGroup getGroup() {
+        return group;
+    }
+
+    public void setGroup(FriendsGroup group) {
+        this.group = group;
     }
 
     @Override

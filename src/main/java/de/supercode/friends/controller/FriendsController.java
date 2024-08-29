@@ -42,4 +42,5 @@ public class FriendsController {
     public ResponseEntity<List<Friend>> getFriendsByVerdienstGreaterThan(@RequestParam long verdienst){
         return ResponseEntity.ok(friendsService.friendWithVerdienstGreaterThan(verdienst));
     }
+
 }
