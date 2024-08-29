@@ -13,12 +13,6 @@ public class Friend {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    public Friend(long id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
     private String firstName;
     private String lastName;
     private Date geburtstag;

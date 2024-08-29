@@ -33,4 +33,9 @@ public class FriendsController {
     public ResponseEntity<Friend> updateFriend(long id, Friend friend){
         return ResponseEntity.status(HttpStatus.CREATED).body(friendsService.updateFriend(id,friend));
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteFriend(@PathVariable long id){
+        friendsService.deleteFriend(id);
+        return ResponseEntity.noContent().build();
+    }
 }
