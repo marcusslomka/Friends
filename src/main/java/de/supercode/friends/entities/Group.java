@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class FriendsGroup {
+public class Group {
     @Id
     @GeneratedValue
     private long id;

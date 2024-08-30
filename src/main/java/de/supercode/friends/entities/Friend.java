@@ -21,7 +21,7 @@ public class Friend {
     private String beruf;
     private long verdienst;
     private boolean goodAtVolleyball;
-    private FriendsGroup group;
+    private Group group;
 
     public long getId() {
         return id;
@@ -98,11 +98,11 @@ public class Friend {
         return this.goodAtVolleyball;
     }
 
-    public FriendsGroup getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(FriendsGroup group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 
