@@ -7,6 +7,7 @@ import de.supercode.friends.repository.GroupRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GroupService {
@@ -22,21 +23,21 @@ public class GroupService {
         return groupRepo.save(group);
     }
 
-    public void addFriendToFriendGoup(long friendID, long friendsgroupID){
-        Group group = groupRepo.findById(friendsgroupID).get();
+    public void addFriendToFriendGroup(long friendID, int groupID){
+        Group group = groupRepo.findById(groupID).get();
         Friend friend = friendsRepo.findById(friendID).get();
         group.getFriends().add(friend);
-        friend.setGroup(group);
+        //friend.setGroup(group);
         groupRepo.save(group);
         friendsRepo.save(friend);
     }
-    public Group getGroup(long id){
+    public Group getGroup(int id){
         return groupRepo.findById(id).orElse(null);
     }
     public List<Group> getAllGroups(){
         return groupRepo.findAll();
     }
-    public void deleteGroup(long id){
+    public void deleteGroup(int id){
         groupRepo.deleteById(id);
     }
 }

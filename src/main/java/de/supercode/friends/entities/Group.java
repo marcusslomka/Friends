@@ -1,5 +1,7 @@
 package de.supercode.friends.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
 public class Group {
     @Id
     @GeneratedValue
-    private long id;
+    private int id;
 
     @Column(unique = true)
     private String name;
@@ -20,8 +22,8 @@ public class Group {
         return friends;
     }
 
-    public void setFriends(List<Friend> friends) {
-        this.friends = friends;
+    public void addFriends(Friend friend) {
+        this.friends.add(friend);
     }
 
     public String getName() {
@@ -32,11 +34,11 @@ public class Group {
         this.name = name;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

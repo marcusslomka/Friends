@@ -29,7 +29,7 @@ public class GroupsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Group> getGroup(@PathVariable long id){
+    public ResponseEntity<Group> getGroup(@PathVariable int id){
         return ResponseEntity.status(HttpStatus.FOUND).body(groupService.getGroup(id));
     }
     @GetMapping
@@ -37,8 +37,12 @@ public class GroupsController {
         return ResponseEntity.status(HttpStatus.FOUND).body(groupService.getAllGroups());
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteGroup (@PathVariable long id){
+    public ResponseEntity<Void> deleteGroup (@PathVariable int id){
         groupService.deleteGroup(id);
         return ResponseEntity.noContent().build();
+    }
+    @PutMapping("/{groupID}/{friendID}")
+    public ResponseEntity<Object> addFriendToGroup(int groupID, long friendID){
+        return ResponseEntity.ok().body(addFriendToGroup(groupID,friendID));
     }
 }

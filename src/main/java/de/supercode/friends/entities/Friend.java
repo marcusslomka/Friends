@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 @Entity
@@ -19,9 +20,9 @@ public class Friend {
     private String handynummer;
     private String email;
     private String beruf;
-    private long verdienst;
+    private BigInteger verdienst;
     private boolean goodAtVolleyball;
-    private Group group;
+
 
     public long getId() {
         return id;
@@ -79,11 +80,11 @@ public class Friend {
         this.beruf = beruf;
     }
 
-    public long getVerdienst() {
+    public BigInteger getVerdienst() {
         return verdienst;
     }
 
-    public void setVerdienst(long verdienst) {
+    public void setVerdienst(BigInteger verdienst) {
         this.verdienst = verdienst;
     }
 
@@ -98,13 +99,7 @@ public class Friend {
         return this.goodAtVolleyball;
     }
 
-    public Group getGroup() {
-        return group;
-    }
 
-    public void setGroup(Group group) {
-        this.group = group;
-    }
 
     @Override
     public String toString() {
